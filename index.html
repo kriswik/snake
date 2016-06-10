@@ -49,6 +49,7 @@
         // Check for food (and grow?)
         if ( snake[0].x == food.x && snake[0].y == food.y)
         {
+          spawnFood();
         	var bodypart = {x: -10, y: -10};
           snake.push(bodypart);  
         }
@@ -59,7 +60,10 @@
       function spawnFood() {
         /* foodX = rnd.Next(0, GridWidth);
            foodY = rnd.Next(0, GridHeight); */
-
+        food.x = Math.floor( Math.random() *64 ) * 10;
+        food.y = Math.floor( Math.random() *40 ) * 10;
+        console.log(food.x);
+        console.log(food.y);
       }
 
       function drawGame() {
